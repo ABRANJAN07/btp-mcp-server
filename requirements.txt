@@ -1,3 +1,16 @@
-httpx>=0.27.0          # async HTTP client for BTP API calls
-python-dotenv>=1.0.0   # reads .env file into environment variables
-fastmcp>=2.0.0         # MCP server framework
+# Phase 2 dependencies
+# New additions compared to Phase 1:
+#   pydantic   — data models with validation (replaces raw dicts)
+#   cachetools — TTL cache so we don't hammer BTP APIs on every call
+#   pytest     — test framework
+#   pytest-asyncio — lets pytest run async test functions
+
+httpx>=0.27.0           # async HTTP client (same as Phase 1)
+python-dotenv>=1.0.0    # reads .env file (same as Phase 1)
+fastmcp>=2.0.0          # MCP server framework (same as Phase 1)
+
+pydantic>=2.0.0         # NEW: typed data models for BTP responses
+cachetools>=5.3.0       # NEW: TTL cache — auto-expires entries after N seconds
+
+pytest>=8.0.0           # NEW: test runner
+pytest-asyncio>=0.23.0  # NEW: async test support
