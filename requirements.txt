@@ -1,0 +1,3 @@
+httpx>=0.27.0          # async HTTP client for BTP API calls
+python-dotenv>=1.0.0   # reads .env file into environment variables
+fastmcp>=2.0.0         # MCP server framework
