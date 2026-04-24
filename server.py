@@ -414,10 +414,31 @@ async def recommend_btp_service(use_case: str) -> dict:
 # Start the server
 # ─────────────────────────────────────────────────────────────────
 
-if __name__ == "__main__":
-    # Validate config here — only runs on server start, not when tests import
-    settings.validate()
+# if __name__ == "__main__":
+#     # Validate config here — only runs on server start, not when tests import
+#     settings.validate()
 
+#     info = cache_info()
+#     print("SAP BTP Discovery MCP Server — Phase 2")
+#     print("Active tools (5):")
+#     print("  list_btp_services, get_btp_service_plans, list_btp_instances,")
+#     print("  get_btp_destinations, recommend_btp_service")
+#     print("Inactive (pending CIS key):")
+#     print("  get_btp_entitlements")
+#     print(f"Cache TTL: {info['ttl_seconds']}s | Transport: stdio\n")
+#     print(f"Cache TTL: {info['ttl_seconds']}s | Transport: stdio\n")
+#     mcp.run(transport="stdio")
+
+### Alternative main() function for CLI command
+def main():
+    """
+    Entry point for the installed CLI command.
+    Called when user runs: btp-mcp-server
+    This is what pyproject.toml points to:
+      [project.scripts]
+      btp-mcp-server = "btp_mcp.server:main"
+    """
+    settings.validate()
     info = cache_info()
     print("SAP BTP Discovery MCP Server — Phase 2")
     print("Active tools (5):")
@@ -425,5 +446,7 @@ if __name__ == "__main__":
     print("  get_btp_destinations, recommend_btp_service")
     print("Inactive (pending CIS key):")
     print("  get_btp_entitlements")
-    print(f"Cache TTL: {info['ttl_seconds']}s | Transport: stdio\n")
     mcp.run(transport="stdio")
+
+if __name__ == "__main__":
+    main()
