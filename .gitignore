@@ -1,0 +1,20 @@
+# Secrets — never commit these
+.env
+*.env
+.env.*
+
+# Python build artifacts
+__pycache__/
+*.pyc
+*.pyo
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# Test cache
+.pytest_cache/
+.coverage
