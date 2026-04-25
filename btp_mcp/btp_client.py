@@ -20,10 +20,10 @@ Each active function follows the same pattern:
 """
 
 import httpx
-from auth import get_auth_headers
-from cache import get_cached, set_cached
-from config import settings
-from models import (
+from btp_mcp.auth import get_auth_headers
+from btp_mcp.cache import get_cached, set_cached
+from btp_mcp.config import settings
+from btp_mcp.models import (
     Destination,
     ServiceInstance,
     ServiceOffering,

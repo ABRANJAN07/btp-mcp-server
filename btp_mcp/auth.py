@@ -17,7 +17,7 @@ How it works:
 
 import time
 import httpx
-from config import settings
+from btp_mcp.config import settings
 
 
 # ── In-memory token cache ──────────────────────────────────────────────────

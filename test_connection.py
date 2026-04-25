@@ -19,7 +19,7 @@ import asyncio
 import sys
 import os
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "btp_mcp"))
+# sys.path.insert(0, os.path.join(os.path.dirname(__file__), "btp_mcp"))
 
 from btp_mcp.config import settings
 from btp_mcp.auth import get_access_token

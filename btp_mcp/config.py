@@ -13,9 +13,16 @@ NOTE — Entitlements API skipped for now:
 """
 
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-load_dotenv()
+# Load environment variables from .env if present.
+# First try the current working directory / parent folders, then fall back
+# to the package root when running from an installed package or alternate cwd.
+env_path = find_dotenv(filename=".env", usecwd=True)
+if not env_path:
+    env_path = os.path.join(os.path.dirname(__file__), os.pardir, ".env")
+
+load_dotenv(env_path)
 
 
 class Settings:

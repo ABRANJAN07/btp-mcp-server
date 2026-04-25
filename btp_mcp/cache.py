@@ -28,7 +28,7 @@ Example with CACHE_TTL_SECONDS=300 (5 minutes):
 """
 
 from cachetools import TTLCache
-from config import settings
+from btp_mcp.config import settings
 
 
 # One shared cache for the whole application.
